@@ -273,6 +273,12 @@ export default function Home() {
             <CardStack items={CARDS} />
           </div>
         </div>
+
+        <footer className="text-center py-2">
+          <p className="text-neutral-500">
+            All rights reserved &copy;2024 MBLAB
+          </p>
+        </footer>
       </div>
     </>
   );
