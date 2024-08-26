@@ -68,6 +68,13 @@
   }
 }
 
-.menu-item .submenu:empty {
-  display: none;
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #e2cbff, #393bb2);
+  transform-origin: 0%;
+  z-index: 60; /* Ensure it appears above other elements */
 }
