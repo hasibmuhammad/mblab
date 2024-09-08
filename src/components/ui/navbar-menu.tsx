@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const transition = {
   type: "spring",
@@ -68,15 +69,20 @@ export const MenuItem = ({
 
 export const Menu = ({
   setActive,
+  isMobile,
   children,
 }: {
   setActive: (item: string | null) => void;
   children: React.ReactNode;
+  isMobile?: boolean;
 }) => {
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="flex justify-center items-center space-x-10  px-8 py-6"
+      className={cn("flex ", {
+        "justify-center items-center space-x-10": !isMobile,
+        "flex-col justify-center px-8 py-6": isMobile,
+      })}
     >
       {children}
     </nav>

@@ -1,7 +1,7 @@
 "use client";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { PinContainer } from "@/components/ui/3d-pin";
-import { CARDS, CardStack } from "@/components/ui/card-stack";
+import { CARDS, CardStack, Highlight } from "@/components/ui/card-stack";
 import Spotlight from "@/components/ui/spotlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { WavyBackground } from "@/components/ui/wavy-background";
@@ -22,29 +22,42 @@ export default function Home() {
       <motion.div className="progress-bar" style={{ scaleX }} />
 
       <div>
-        <div className="h-[49rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+        <div className="md:h-[49rem] h-[40rem] max-w-full mx-auto rounded-md flex items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
           <Spotlight
-            className="-top-40 left-0 md:left-60 md:-top-20"
+            className="top-28 left-32 md:left-60 md:-top-20"
             fill="white"
           />
-          <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
-            <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-              MBLAB <br /> is beyond services.
+          <div className="px-4 md:px-0 max-w-7xl mx-auto relative z-10  w-full pt-20 md:pt-0">
+            <h1 className="max-w-5xl mx-auto text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+              <span className="text-emerald-700">Transform</span> Your Life with
+              Cutting-Edge Technology
             </h1>
             <div className="max-w-lg text-center mx-auto">
               <TextGenerateEffect duration={2} filter={false} words={words} />
             </div>
 
-            <Link href={"#services"}>
-              <div className="text-center mt-6">
-                <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                    Check Our Services
-                  </span>
-                </button>
-              </div>
-            </Link>
+            <div className="flex gap-4 justify-center items-center">
+              <Link href={"#services"}>
+                <div className="text-center mt-6">
+                  <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </Link>
+              <Link href={"#services"}>
+                <div className="text-center mt-6">
+                  <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                      Discover
+                    </span>
+                  </button>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -58,7 +71,7 @@ export default function Home() {
 
           <div className="max-w-7xl mx-auto px-10 md:px-0 my-10 grid grid-cols-1 md:grid-cols-3 gap-y-3 md:space-x-5">
             <CardContainer className="max-w-[400px] w-full inter-var">
-              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6  ">
                 <CardItem
                   translateZ="50"
                   className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -193,11 +206,11 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-full">
-          <WavyBackground className="max-w-4xl mx-auto pb-40">
+          <WavyBackground className="max-w-4xl mx-auto md:pb-40">
             <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
               About Us
             </p>
-            <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
+            <p className="px-4 md:px-0 text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
               At MBLab, we are dedicated to delivering high-quality software
               solutions that drive business success. Our team of experienced
               developers and designers work collaboratively to create innovative
@@ -213,7 +226,7 @@ export default function Home() {
           <p className="text-center py-2 text-neutral-400">
             We Provide the world-class projects.
           </p>
-          <div className="py-14 w-full flex items-center justify-center ">
+          <div className="py-14 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center ">
             <PinContainer title="/project1" href="#">
               <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
                 <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
